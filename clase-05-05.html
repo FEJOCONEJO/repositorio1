@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            list-style: none;
+            text-decoration: none;
+        }
+        .pic {
+            width: 100px;
+        }
+        .padre {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .holi {
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+            
+        }
+        .hijo3 {
+            animation-name: movimiento;
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+        }
+        @keyframes movimiento {
+            0% {
+                background-color: yellow;
+                border-radius: 25%;
+                transform: translateX(0);
+            }
+            25% {
+                background-color: red;
+                border-radius: 0;
+                transform: translate(100%);
+            }
+            50% {
+                background-color: salmon;
+                border-radius: 25%;
+                transform: translate(100%,100%);
+            }
+            75% {
+                background-color: purple;
+                border-radius: 0;
+                transform: translateX(0,-100%);
+            }
+            0% {
+                background-color: yellow;
+                border-radius: 25%;
+                transform: translateY(0%);
+            }
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+        }
+        .nav {
+
+        }
+        .menu:checked + nav {
+
+        }
+        .inner,
+        .inner::before,
+        .inner::after {
+            content: '';
+            width: 40px;
+            height: 5px;
+            border-radius: 10px;
+            position: absolute;
+        }
+        .inner::before {
+            top: 10px;
+        }
+        .inner::after {
+            top: 10px;
+        }
+        .check {
+            display: none;
+        }
+        .check:checked {
+            
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="logo.png" class="pic">
+    <div>
+        <label>
+            <div class="inner"></div>
+        </label>
+        <input class="check" type="checkbox" id="menu">
+        <nav class="nav">
+            <ul>
+                <li>Menu1</li>
+                <li>Menu2</li>
+                <li>Menu3</li>
+                <li>Menu4</li>
+            </ul>
+        </nav>
+    </div>
+</header>    
+<!--div.padre>div*5#hijo-id$.holi.hijo$ -->
+    <div class="padre">
+        <div id="hijo-id1" class="holi hijo1"></div>
+        <div id="hijo-id2" class="holi hijo2"></div>
+        <div id="hijo-id3" class="holi hijo3"></div>
+        <div id="hijo-id4" class="holi hijo4"></div>
+        <div id="hijo-id5" class="holi hijo5"></div>
+    </div>
+</body>
+</html>
